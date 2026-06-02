@@ -1,11 +1,11 @@
 # Water Billing Collection System - PRM393
 
-Dự án phát triển hệ thống thu tiền nước hoàn chỉnh bằng Flutter dành cho nhân viên ghi chỉ số.
+Dự án phát triển hệ thống thu tiền nước hoàn chỉnh bằng Flutter dành cho nhân viên ghi chỉ số (Sử dụng AI).
 
 ## 📝 Hướng dẫn Luồng Nghiệp vụ (AI Prompt Reference)
 
 Dưới đây là mô tả chi tiết luồng hoạt động của ứng dụng để phục vụ việc phát triển và bảo trì. 
-*Lưu ý: Mỗi đoạn mô tả giới hạn tối đa 4000 ký tự.*
+*Lưu ý: 
 
 ---
 

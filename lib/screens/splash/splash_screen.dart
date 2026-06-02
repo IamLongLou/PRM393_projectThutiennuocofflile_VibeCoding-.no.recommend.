@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
     // Controller cho thanh tiến trình hiện giây
     _progressController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 60),
+      duration: const Duration(seconds: 30),
     );
 
     _progressAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_progressController)
