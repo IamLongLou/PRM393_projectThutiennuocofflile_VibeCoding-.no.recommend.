@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:intl/intl.dart';
 import '../../models/customer.dart';
 import '../../routes/app_routes.dart';
 import 'customer_history_screen.dart';
@@ -161,19 +162,19 @@ class CustomerDetailScreen extends StatelessWidget {
           const SizedBox(height: 20),
           const Divider(color: Colors.white24),
           const SizedBox(height: 10),
-          const Row(
+          Row(
             children: [
-              Icon(Icons.trending_up, color: Colors.white70, size: 16),
-              SizedBox(width: 5),
-              Text('THÁNG TRƯỚC', style: TextStyle(color: Colors.white60, fontSize: 10)),
-              SizedBox(width: 5),
-              Text('22 m³', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 13)),
-              Spacer(),
-              Icon(Icons.access_time, color: Colors.white70, size: 16),
-              SizedBox(width: 5),
-              Text('GHI GẦN NHẤT', style: TextStyle(color: Colors.white60, fontSize: 10)),
-              SizedBox(width: 5),
-              Text('15/02/2024', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 13)),
+              const Icon(Icons.trending_up, color: Colors.white70, size: 16),
+              const SizedBox(width: 5),
+              const Text('THÁNG TRƯỚC', style: TextStyle(color: Colors.white60, fontSize: 10)),
+              const SizedBox(width: 5),
+              const Text('22 m³', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 13)),
+              const Spacer(),
+              const Icon(Icons.access_time, color: Colors.white70, size: 16),
+              const SizedBox(width: 5),
+              const Text('GHI GẦN NHẤT', style: TextStyle(color: Colors.white60, fontSize: 10)),
+              const SizedBox(width: 5),
+              Text(DateFormat('dd/MM/yyyy').format(DateTime.now()), style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 13)),
             ],
           )
         ],
@@ -209,22 +210,32 @@ class CustomerDetailScreen extends StatelessWidget {
           InkWell(
             onTap: () => _openMap(customer.address),
             child: Container(
-              height: 120,
+              height: 140,
               width: double.infinity,
               decoration: BoxDecoration(
+                color: Colors.grey[100],
                 borderRadius: BorderRadius.circular(15),
                 image: const DecorationImage(
-                  image: NetworkImage('https://file.hstatic.net/1000216124/article/map_google_df7815b37624449884488277207c6f2c.jpg'), 
-                  fit: BoxFit.cover
+                  image: NetworkImage('https://maps.gstatic.com/tactile/pane/default_geocode-2x.png'), 
+                  fit: BoxFit.cover,
+                  opacity: 0.5,
                 ),
               ),
               child: Center(
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                  decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)),
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  decoration: BoxDecoration(
+                    color: Colors.white, 
+                    borderRadius: BorderRadius.circular(25),
+                    boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10)],
+                  ),
                   child: const Row(
                     mainAxisSize: MainAxisSize.min,
-                    children: [Icon(Icons.map_outlined, size: 16), SizedBox(width: 4), Text('Xem bản đồ', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold))],
+                    children: [
+                      Icon(Icons.map_outlined, size: 18, color: Colors.blue),
+                      SizedBox(width: 8),
+                      Text('Mở Google Maps', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.blue)),
+                    ],
                   ),
                 ),
               ),
