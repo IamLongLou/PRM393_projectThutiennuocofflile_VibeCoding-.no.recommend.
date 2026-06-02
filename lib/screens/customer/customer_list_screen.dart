@@ -25,7 +25,7 @@ class _CustomerListScreenState extends State<CustomerListScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('AquaCollect', style: TextStyle(fontWeight: FontWeight.bold)),
+        title: const Text('Danh sách khách hàng', style: TextStyle(fontWeight: FontWeight.bold)),
         centerTitle: false,
       ),
       body: Column(

@@ -224,17 +224,14 @@ class HomeScreen extends StatelessWidget {
       currentIndex: 0,
       selectedItemColor: Colors.blue,
       unselectedItemColor: Colors.grey,
-      selectedLabelStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
       onTap: (index) {
-        if (index == 1) Navigator.pushNamed(context, AppRoutes.customerList);
-        if (index == 2) Navigator.pushNamed(context, AppRoutes.history);
-        if (index == 3) Navigator.pushNamed(context, AppRoutes.settings);
+        if (index == 1) Navigator.pushReplacementNamed(context, AppRoutes.statistics);
+        if (index == 2) Navigator.pushReplacementNamed(context, AppRoutes.sync);
       },
       items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'Trang chủ'),
-        BottomNavigationBarItem(icon: Icon(Icons.people_outline), label: 'Khách hàng'),
-        BottomNavigationBarItem(icon: Icon(Icons.history), label: 'Lịch sử'),
-        BottomNavigationBarItem(icon: Icon(Icons.settings_outlined), label: 'Cài đặt'),
+        BottomNavigationBarItem(icon: Icon(Icons.payment), label: 'Payment'),
+        BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: 'Stats'),
+        BottomNavigationBarItem(icon: Icon(Icons.sync), label: 'Sync'),
       ],
     );
   }
